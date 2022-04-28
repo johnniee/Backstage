@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Backstage
+  title: Sample Service # optional, human readable component name
+  description: My first Backtstage catalog item.
+  annotations:
+    github.com/project-slug: johnniee/Backstage
+spec:
+  type: service
+  owner: user:johnniee
+  lifecycle: experimental
+  
