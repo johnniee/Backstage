@@ -6,6 +6,7 @@ metadata:
   description: My first Backtstage catalog item.
   annotations:
     github.com/project-slug: johnniee/Backstage
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:johnniee
