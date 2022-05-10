@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: Backstage
   title: Sample Service # optional, human readable component name
-  description: My first Backtstage catalog item.
+  description: My first Backtstage catalog item - TEST.
   annotations:
     github.com/project-slug: johnniee/Backstage
     backstage.io/techdocs-ref: dir:.
