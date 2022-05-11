@@ -78,13 +78,11 @@ spec:
 
     - id: publishToGitHub
       name: Publish to GitHub
-      action: publish:github
+      action: publish:github:pull-request
       input:
         allowedHosts: ['github.com']
+        branchName: ${{ parameters.chart_branch }}
         description: 'A static HTML website. Just like the good old days.'
-        repoUrl: ${{ parameters.repoUrl }}
-        defaultBranch: ${{ parameters.defaultBranch }}
-        repoVisibility: public
-
+        title: Creating: ${{ parameters.service_name }}
   output:
     remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}
