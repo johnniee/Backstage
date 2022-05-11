@@ -9,5 +9,4 @@ spec:
     displayName: Demand
     email: demand@is.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
-  parent: ops
   children: [delivery, ds-infra]
