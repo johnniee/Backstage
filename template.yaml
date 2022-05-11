@@ -37,6 +37,7 @@ spec:
         - helm_path
         - chart_branch
         - files_path
+        - owner
       properties:
         owner:
           title: Owner
