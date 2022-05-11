@@ -9,5 +9,4 @@ spec:
     displayName: Supply
     email: supply@is.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
-  parent: ops
   children: [mediation]
