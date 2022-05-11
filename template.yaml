@@ -13,7 +13,7 @@ spec:
     - title: Choose a Source Control Management tool to store your new website in.
       required:
         - repoUrl
-      properties: 
+      properties:
         repoUrl:
           title: Repository Location
           type: string
@@ -60,9 +60,9 @@ spec:
 
     - title: Values Files path
       required:
-        - values_files_path
+        - files_path
       properties:
-        values_files_path:
+        files_path:
           title: The values files path
           type: string
           description: The path to the values files

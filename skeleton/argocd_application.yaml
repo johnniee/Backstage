@@ -9,11 +9,11 @@ spec:
   project: default
   source:
     repoURL: ${{ values.service_name }}
-    targetRevision: ${{ values.service_branch }}
-    path: ${{ values.service_helm_path }}
+    targetRevision: ${{ values.defaultBranch }}
+    path: ${{ values.helm_path }}
     helm:
       valueFiles:
-        ${{ values.values_files_path }}
+        ${{ values.files_path }}
   destination:
     namespace: argocd-apps
     server: local
