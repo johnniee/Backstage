@@ -1,0 +1,90 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: ArgoCD-Application
+  title: Create a ArgoCD Application CRD
+  description: BlaBla
+
+spec:
+  owner: user:yonatan.elkad
+  type: website
+  parameters:
+
+    - title: Choose a Source Control Management tool to store your new website in.
+      required:
+        - repoUrl
+      properties: 
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+    - title: Default branch on the repository
+      required:
+        - defaultBranch
+      properties:
+        defaultBranch:
+          title: Default Branch
+          type: string
+          description: This will be used as the default branch on the repository
+
+    - title: Provide The Service Name
+      required:
+        - service_name
+      properties:
+        service_name:
+          title: Service name
+          type: string
+          description: The K8s Service name.
+
+    - title: Helm Chart path
+      required:
+        - helm_path
+      properties:
+        helm_path:
+          title: Helm Chart Path
+          type: string
+          description: The K8s Helm Chart path.
+
+    - title: Github Branch
+      required:
+        - chart_branch
+      properties:
+        values_files_path:
+          title: Helm chart branch
+          type: string
+          description: The branch to load the chart from
+
+    - title: Values Files path
+      required:
+        - values_files_path
+      properties:
+        values_files_path:
+          title: The values files path
+          type: string
+          description: The path to the values files
+
+  steps:
+    - id: template
+      name: Fetch Skeleton + Template
+      action: fetch:template
+      input:
+        url: ./application_crd_skeleton
+        values:
+          service_name: ${{ parameters.service_name }}
+
+    - id: publishToGitHub
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: 'A static HTML website. Just like the good old days.'
+        repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: ${{ parameters.defaultBranch }}
+        repoVisibility: public
+
+  output:
+    remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}
