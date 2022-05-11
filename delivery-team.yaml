@@ -10,3 +10,4 @@ spec:
     email: delivery@is.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
   parent: demand
+  children: []
