@@ -80,7 +80,8 @@ spec:
       name: Publish to GitHub
       action: publish:github:pull-request
       input:
-        repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
+        #repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
+        repoUrl: 'github.com?repo=reponame&owner=owner'
         branchName: ${{ parameters.chart_branch }}
         description: 'A static HTML website. Just like the good old days.'
         title: Creating: ${{ parameters.service_name }}
