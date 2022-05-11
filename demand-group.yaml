@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: demand
+  description: The demand business unit
+spec:
+  type: business-unit
+  profile:
+    displayName: Demand
+    email: demand@is.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [delivery, ds-infra]
