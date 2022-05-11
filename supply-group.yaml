@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: supply
+  description: The supply business unit
+spec:
+  type: business-unit
+  profile:
+    displayName: Supply
+    email: supply@is.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [mediation]
