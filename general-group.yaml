@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: general
+  description: The general business unit
+spec:
+  type: business-unit
+  profile:
+    displayName: General
+    email: general@is.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [devops, data]
