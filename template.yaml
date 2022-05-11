@@ -60,9 +60,9 @@ spec:
 
     - title: Values Files path
       required:
-        - files_path
+        - values_files_path
       properties:
-        files_path:
+        values_files_path:
           title: The values files path
           type: string
           description: The path to the values files
