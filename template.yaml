@@ -31,41 +31,55 @@ spec:
           type: string
           description: This will be used as the default branch on the repository
 
-    - title: Provide The Service Name
+    - title: Provide The service details
       required:
         - service_name
+        - helm_path
+        - chart_branch
+        - files_path
       properties:
         service_name:
           title: Service name
           type: string
           description: The K8s Service name.
-
-    - title: Helm Chart path
-      required:
-        - helm_path
-      properties:
         helm_path:
           title: Helm Chart Path
           type: string
           description: The K8s Helm Chart path.
-
-    - title: Github Branch
-      required:
-        - chart_branch
-      properties:
         chart_branch:
-          title: Helm chart branch
+          title: Github Branch
           type: string
           description: The branch to load the chart from
-
-    - title: Values Files path
-      required:
-        - files_path
-      properties:
         files_path:
           title: The values files path
           type: string
           description: The path to the values files
+    # - title: Helm Chart path
+    #   required:
+    #     - helm_path
+    #   properties:
+    #     helm_path:
+    #       title: Helm Chart Path
+    #       type: string
+    #       description: The K8s Helm Chart path.
+
+    # - title: Github Branch
+    #   required:
+    #     - chart_branch
+    #   properties:
+    #     chart_branch:
+    #       title: Helm chart branch
+    #       type: string
+    #       description: The branch to load the chart from
+
+    # - title: Values Files path
+    #   required:
+    #     - files_path
+    #   properties:
+    #     files_path:
+    #       title: The values files path
+    #       type: string
+    #       description: The path to the values files
 
   steps:
     - id: template
