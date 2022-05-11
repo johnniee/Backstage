@@ -38,6 +38,14 @@ spec:
         - chart_branch
         - files_path
       properties:
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
         service_name:
           title: Service name
           type: string
