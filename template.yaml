@@ -87,7 +87,7 @@ spec:
         #repoUrl: 'github.com?repo=reponame&owner=owner'
         branchName: ${{ parameters.chart_branch }}
         description: 'A static HTML website. Just like the good old days.'
-        title: 'Add-service ${{ parameters.service_name }}'
+        title: Add-service ${{ parameters.service_name }}
 
   output:
     remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}
