@@ -53,7 +53,7 @@ spec:
       required:
         - chart_branch
       properties:
-        values_files_path:
+        chart_branch:
           title: Helm chart branch
           type: string
           description: The branch to load the chart from
