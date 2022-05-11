@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ds-infra
+  description: The ds-infra team
+spec:
+  type: team
+  profile:
+    displayName: DS-Infra
+    email: ds-infra@is.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: demand
+  children: []
