@@ -84,6 +84,6 @@ spec:
         repoUrl: 'github.com?repo=reponame&owner=owner'
         branchName: ${{ parameters.chart_branch }}
         description: 'A static HTML website. Just like the good old days.'
-        title: Creating: ${{ parameters.service_name }}
+        title: TADA
   output:
     remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}
