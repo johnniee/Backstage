@@ -9,5 +9,4 @@ spec:
     displayName: General
     email: general@is.com
     picture: https://example.com/groups/bu-infrastructure.jpeg
-  parent: ops
   children: [devops, data]
