@@ -60,9 +60,9 @@ spec:
 
     - title: Values Files path
       required:
-        - values_files_path
+        - files_path
       properties:
-        values_files_path:
+        files_path:
           title: The values files path
           type: string
           description: The path to the values files
@@ -75,6 +75,9 @@ spec:
         url: ./skeleton
         values:
           service_name: ${{ parameters.service_name }}
+          chart_branch: ${{ parameters.chart_branch }}
+          helm_path: ${{ parameters.helm_path }}
+          files_path: ${{ parameters.helm_path }}
 
     - id: publishToGitHub
       name: Publish to GitHub
@@ -84,6 +87,7 @@ spec:
         #repoUrl: 'github.com?repo=reponame&owner=owner'
         branchName: ${{ parameters.chart_branch }}
         description: 'A static HTML website. Just like the good old days.'
-        title: TADA
+        title: 'Add-service ${{ parameters.service_name }}'
+
   output:
     remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}

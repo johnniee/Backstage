@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: ${{ values.service_name }}
-    targetRevision: ${{ values.defaultBranch }}
+    targetRevision: ${{ values.chart_branch }}
     path: ${{ values.helm_path }}
     helm:
       valueFiles:
