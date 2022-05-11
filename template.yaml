@@ -85,7 +85,7 @@ spec:
       input:
         repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
         #repoUrl: 'github.com?repo=reponame&owner=owner'
-        branchName: ${{ parameters.chart_branch }}
+        branchName: ${{ parameters.defaultBranch }}
         description: 'A static HTML website. Just like the good old days.'
         title: Add-service ${{ parameters.service_name }}
 
