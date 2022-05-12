@@ -76,7 +76,7 @@ spec:
 
     - id: publishToGitHub
       name: Publish to GitHub
-      action: publish:github:pull-request
+      action: publish:github
       input:
         # repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
         repoUrl: 'github.com?owner=johnniee&repo=Backstage'
