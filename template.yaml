@@ -9,26 +9,25 @@ spec:
   owner: user:yonatan.elkad
   type: kube_service
   parameters:
-    - title: Choose a Source Control Management tool to store your new website in.
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
-
-    - title: Default branch on the repository
-      required:
-        - defaultBranch
-      properties:
-        defaultBranch:
-          title: Default Branch
-          type: string
-          description: This will be used as the default branch on the repository
+    # - title: Choose a Source Control Management tool to store your new website in.
+    #   required:
+    #     - repoUrl
+    #   properties:
+    #     repoUrl:
+    #       title: Repository Location
+    #       type: string
+    #       ui:field: RepoUrlPicker
+    #       ui:options:
+    #         allowedHosts:
+    #           - github.com
+    # - title: Default branch on the repository
+    #   required:
+    #     - defaultBranch
+    #   properties:
+    #     defaultBranch:
+    #       title: Default Branch
+    #       type: string
+    #       description: This will be used as the default branch on the repository
 
     - title: Provide The service details
       required:
@@ -79,9 +78,10 @@ spec:
       name: Publish to GitHub
       action: publish:github:pull-request
       input:
-        repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
-        #repoUrl: 'github.com?repo=reponame&owner=owner'
-        branchName: ${{ parameters.defaultBranch }}
+        # repoUrl: 'github.com?repo=${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}&owner=${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}'
+        repoUrl: 'github.com?owner=johnniee&repo=Backstage'
+        branchName: master
+        # branchName: ${{ parameters.defaultBranch }}
         description: 'A static HTML website. Just like the good old days.'
         title: Add-service ${{ parameters.service_name }}
     - id: register
