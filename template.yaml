@@ -9,7 +9,6 @@ spec:
   owner: user:yonatan.elkad
   type: kube_service
   parameters:
-
     - title: Choose a Source Control Management tool to store your new website in.
       required:
         - repoUrl
@@ -40,9 +39,9 @@ spec:
         - owner
       properties:
         owner:
-          title: Owner
+          title: Team
           type: string
-          description: Owner of the component
+          description: Team name
           ui:field: OwnerPicker
           ui:options:
             allowedKinds:
@@ -63,32 +62,6 @@ spec:
           title: The values files path
           type: string
           description: The path to the values files
-    # - title: Helm Chart path
-    #   required:
-    #     - helm_path
-    #   properties:
-    #     helm_path:
-    #       title: Helm Chart Path
-    #       type: string
-    #       description: The K8s Helm Chart path.
-
-    # - title: Github Branch
-    #   required:
-    #     - chart_branch
-    #   properties:
-    #     chart_branch:
-    #       title: Helm chart branch
-    #       type: string
-    #       description: The branch to load the chart from
-
-    # - title: Values Files path
-    #   required:
-    #     - files_path
-    #   properties:
-    #     files_path:
-    #       title: The values files path
-    #       type: string
-    #       description: The path to the values files
 
   steps:
     - id: template
