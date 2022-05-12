@@ -73,6 +73,7 @@ spec:
           chart_branch: ${{ parameters.chart_branch }}
           helm_path: ${{ parameters.helm_path }}
           files_path: ${{ parameters.helm_path }}
+          owner: ${{ parameters.owner }}
 
     - id: publishToGitHub
       name: Publish to GitHub
@@ -84,11 +85,12 @@ spec:
         # branchName: ${{ parameters.defaultBranch }}
         description: 'A static HTML website. Just like the good old days.'
         title: Add-service ${{ parameters.service_name }}
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        # repoContentsUrl: ${{ steps.publishToGitHub.output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info2.yaml'
+
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     # repoContentsUrl: ${{ steps.publishToGitHub.output.repoContentsUrl }}
+    #     catalogInfoPath: '/catalog-info2.yaml'
   output:
     remoteUrl: ${{ steps.publishToGitHub.output.remoteUrl }}
