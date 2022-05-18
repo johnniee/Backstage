@@ -53,6 +53,10 @@ spec:
           title: project
           type: string
           description: The Project
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
         chart_branch:
           title: Github Branch
           type: string
@@ -73,7 +77,7 @@ spec:
         values:
           service_name: ${{ parameters.service_name }}
           chart_branch: ${{ parameters.chart_branch }}
-          helm_path: values/${{ parameteres.team }}/${{ parameters.project }}/${{ parameters.service_name }}
+          helm_path: values/${{ parameteres.owner }}/${{ parameters.project }}/${{ parameters.service_name }}
           files_path: ${{ parameters.helm_path }}
           owner: ${{ parameters.owner }}
 
@@ -85,7 +89,7 @@ spec:
         repoUrl: 'github.com?owner=johnniee&repo=Backstage'
         branchName: master
         # branchName: ${{ parameters.defaultBranch }}
-        description: 'A static HTML website. Just like the good old days.'
+        description: 'New K8S Service: ${{ parameteres.service_name }}'
         title: Add-service ${{ parameters.service_name }}
 
     # - id: register
