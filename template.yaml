@@ -53,7 +53,7 @@ spec:
           title: project
           type: string
           description: The Project
-          ui:field: OwnerPicker
+          ui:field: entityPicker
           ui:options:
             allowedKinds:
               - Group
