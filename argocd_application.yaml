@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: lior-service
+  name: test
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: lior-service
+    repoURL: test
     targetRevision: master
-    path: lior-helm-path
+    path: values//project/test
     helm:
       valueFiles:
-        lior-helm-path
+        
   destination:
     namespace: argocd-apps
     server: local
