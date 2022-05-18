@@ -32,7 +32,7 @@ spec:
     - title: Provide The service details
       required:
         - service_name
-        - helm_path
+        - project
         - chart_branch
         - files_path
         - owner
@@ -49,10 +49,10 @@ spec:
           title: Service name
           type: string
           description: The K8s Service name.
-        helm_path:
-          title: Helm Chart Path
+        project:
+          title: project
           type: string
-          description: The K8s Helm Chart path.
+          description: The Project
         chart_branch:
           title: Github Branch
           type: string
@@ -61,6 +61,8 @@ spec:
           title: The values files path
           type: string
           description: The path to the values files
+
+#             chartPath: values/<team>/<project>/<service_nmame>
 
   steps:
     - id: template
@@ -71,7 +73,7 @@ spec:
         values:
           service_name: ${{ parameters.service_name }}
           chart_branch: ${{ parameters.chart_branch }}
-          helm_path: ${{ parameters.helm_path }}
+          helm_path: values/${{ parameteres.team }}/${{ parameters.project }}/${{ parameters.service_name }}
           files_path: ${{ parameters.helm_path }}
           owner: ${{ parameters.owner }}
 

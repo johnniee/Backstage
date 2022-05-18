@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: delivery
+  description: The delivery team
+spec:
+  type: project
+  profile:
+    displayName: network-operations
+    email: delivery@is.com
+    picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: demand
+  children: []
